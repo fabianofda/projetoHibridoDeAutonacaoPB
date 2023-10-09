@@ -4,12 +4,9 @@ Este projeto de automação é uma combinação de testes web usando Java, Maven
 
 ## Estrutura do Projeto
 
-![Estrutura do projeto](src/test/resources/prj.png)
-
 - `src/test/java/projetoHibridoDeAutonacaoPB/web`: Contém os testes de automação web.
 - `src/test/java/projetoHibridoDeAutonacaoPB/api`: Contém os testes de automação de api.
 
-<span style="color: red;"> Obs para executar os testes web, baixar a versao do 'chromedrive.exe', equivalente a versao instalada no computador!</span>
 
 ## Configuração
 

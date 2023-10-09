@@ -10,12 +10,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BaseTest {
     public static WebDriver driver;
     public static final String URL_BASE = "https://the-internet.herokuapp.com/challenging_dom";
-    // public static final String DRIVER = "src/test/resources/chromedriver";
 
     @BeforeClass
     public static void inicializar() {
-        // System.setProperty("webdriver.chrome.driver", DRIVER);
-
         WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();

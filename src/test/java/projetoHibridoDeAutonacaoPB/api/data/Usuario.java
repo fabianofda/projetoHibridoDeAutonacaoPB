@@ -13,13 +13,13 @@ public class Usuario {
                 "    \"street\": \"barueri sp\",\n" +
                 "    \"suite\": \"Apt. 123\",\n" +
                 "    \"city\": \"barueri\",\n" +
-                "    \"zipcode\": \"98888-889\",\n" +
+                "    \"zipcode\": \"92998-3874\",\n" +
                 "    \"geo\": {\n" +
                 "      \"lat\": \"-37.3159\",\n" +
                 "      \"lng\": \"81.1496\"\n" +
                 "    }\n" +
                 "  },\n" +
-                "  \"phone\": \"+55(11)966669999\",\n" +
+                "  \"phone\": \"1-770-736-8031 x56442\",\n" +
                 "  \"website\": \"hildegard.org\",\n" +
                 "  \"company\": {\n" +
                 "    \"name\": \"Romaguera-Crona\",\n" +

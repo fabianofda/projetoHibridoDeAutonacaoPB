@@ -15,6 +15,7 @@ public class ChallengingPage {
     }
 
     public List<WebElement> obterLinksEdit() {
+
         return  driver.findElements(By.xpath("//*[text()='edit']"));
     }
 
@@ -23,36 +24,26 @@ public class ChallengingPage {
     }
 
     public void buttonAzul()  {
-        var botao=  driver.findElement(By.xpath("(//div[@class ='large-2 columns']/a)[1]"));
+        driver.findElement(By.xpath("(//div[@class ='large-2 columns']/a)[1]")).click();
+    }
 
-        if (botao.isEnabled()) {
-            System.out.println("O botão é clicável.");
-            botao.click();
-        } else {
-            System.out.println("O botão não é clicável.");
-        }
-
+    public String textoButtonAzul()  {
+       return driver.findElement(By.xpath("(//div[@class ='large-2 columns']/a)[1]")).getText();
     }
 
     public void buttonVermelho() {
-        var botao=  driver.findElement(By.xpath("(//div[@class ='large-2 columns']/a)[2]"));
+        driver.findElement(By.xpath("(//div[@class ='large-2 columns']/a)[2]")).click();
+    }
 
-        if (botao.isEnabled()) {
-            System.out.println("O botão é clicável.");
-            botao.click();
-        } else {
-            System.out.println("O botão não é clicável.");
-        }
+    public String textoButtonVermelho()  {
+        return driver.findElement(By.xpath("(//div[@class ='large-2 columns']/a)[2]")).getText();
     }
 
     public void buttonVerde() {
-        var botao=  driver.findElement(By.xpath("(//div[@class ='large-2 columns']/a)[3]"));
+        driver.findElement(By.xpath("(//div[@class ='large-2 columns']/a)[3]")).click();
+    }
 
-        if (botao.isEnabled()) {
-            System.out.println("O botão é clicável.");
-            botao.click();
-        } else {
-            System.out.println("O botão não é clicável.");
-        }
+    public String textoButtonVerde()  {
+        return driver.findElement(By.xpath("(//div[@class ='large-2 columns']/a)[3]")).getText();
     }
 }

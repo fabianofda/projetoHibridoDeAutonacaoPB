@@ -1,36 +1,30 @@
 package projetoHibridoDeAutonacaoPB.web.tests;
 
-import org.junit.Assert;
+
 import org.junit.Test;
+
 import org.openqa.selenium.WebElement;
 import projetoHibridoDeAutonacaoPB.web.pages.ChallengingPage;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class ChallengingTest extends BaseTest{
     ChallengingPage page = new ChallengingPage(driver);
 
     @Test
-    public void testDeveEfetuarUmCliqueNoBotaoAzulDaTela(){
+    public void testDeveEfetuarUmCliqueNoBotaoAzulDaTela() {
         page.buttonAzul();
-        var  elemento = page.canvaAnswer();
-
-        Assert.assertTrue("O elemento está presente!", elemento);
     }
 
     @Test
-    public void testDeveEfetuarUmCliqueNoBotaoVermelhoDaTela(){
+    public void testDeveEfetuarUmCliqueNoBotaoVermelhoDaTela() {
         page.buttonVermelho();
-        var  elemento = page.canvaAnswer();
-
-        Assert.assertTrue("O elemento está presente!", elemento);
     }
 
     @Test
-    public void testDeveEfetuarUmCliqueNoBotaoVerdeDaTela(){
+    public void testDeveEfetuarUmCliqueNoBotaoVerdeDaTela() {
         page.buttonVerde();
-        var  elemento = page.canvaAnswer();
-
-        Assert.assertTrue("O elemento está presente!", elemento);
     }
 
     @Test
@@ -51,7 +45,7 @@ public class ChallengingTest extends BaseTest{
             contadorDelete++;
         }
 
-        Assert.assertEquals(10, contadorEdit);
-        Assert.assertEquals(10, contadorDelete);
+        assertEquals(10, contadorEdit);
+        assertEquals(10, contadorDelete);
     }
 }

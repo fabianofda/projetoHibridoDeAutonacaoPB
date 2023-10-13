@@ -4,19 +4,13 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import projetoHibridoDeAutonacaoPB.api.data.Usuario;
-
 import org.junit.Test;
-
-import static io.restassured.RestAssured.*;
 import static org.hamcrest.CoreMatchers.equalTo;
-
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.module.jsv.JsonSchemaValidatorSettings;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
 
 public class UsuarioTest extends BaseService{
     Usuario usuario = new Usuario();
@@ -28,7 +22,7 @@ public class UsuarioTest extends BaseService{
                 .given()
                     .header("content-type", "application/json; charset=utf-8")
                 .when()
-                    .get();
+                    .get("/users");
 
         response.then()
                 .statusCode(200)
@@ -45,7 +39,7 @@ public class UsuarioTest extends BaseService{
                 .given()
                 .header("content-type", "application/json; charset=utf-8")
                 .when()
-                .get("/10");
+                .get("/users/10");
 
         response.then()
                 .statusCode(200)
@@ -82,7 +76,7 @@ public class UsuarioTest extends BaseService{
                 .header("content-type", "application/json; charset=utf-8")
                 .body(usuario.getString())
                 .when()
-                .post(baseURI);
+                .post("/users");
 
         response.then()
                 .assertThat()
@@ -115,7 +109,7 @@ public class UsuarioTest extends BaseService{
                 .given()
                 .header("content-type", "application/json; charset=utf-8")
                 .when()
-                .delete("/1");
+                .delete("users/1");
 
         response.then()
                 .statusCode(200)
@@ -133,7 +127,7 @@ public class UsuarioTest extends BaseService{
                 .header("content-type", "application/json; charset=utf-8")
                 .body(usuario.putString())
                 .when()
-                .put("/5");
+                .put("users/5");
 
         response.then()
                 .statusCode(200)

@@ -12,7 +12,7 @@ public class BaseService {
     @BeforeClass
     public static void setup(){
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
-        baseURI = "https://jsonplaceholder.typicode.com/users";
+        baseURI = "https://jsonplaceholder.typicode.com";
 
         RestAssured.requestSpecification = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)

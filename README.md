@@ -23,15 +23,8 @@ Para instalar as dependências do projeto, execute o seguinte comando:
 Para executar todos os testes do projeto, use o seguinte comando:
 >mvn test -Dtest=RunnerTests
 
-
-### Testes Web
-
 Para executar os testes web, use o seguinte comando:
 >mvn test -Dtest=projetoHibridoDeAutonacaoPB.web.tests.ChallengingTest
-
-
-### Testes de API
-
 
 Para executar os testes de API, use o seguinte comando:
 >mvn test -Dtest=projetoHibridoDeAutonacaoPB.api.tests.UsuarioTest

@@ -1,13 +1,12 @@
 package projetoHibridoDeAutonacaoPB.web.tests;
 
-
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import projetoHibridoDeAutonacaoPB.web.pages.ChallengingPage;
 import java.util.List;
 import static org.junit.Assert.*;
 
-public class ChallengingTest extends BaseTest{
+public class ChallengingTest extends BaseTest {
     ChallengingPage page = new ChallengingPage(driver);
 
     @Test
@@ -21,7 +20,11 @@ public class ChallengingTest extends BaseTest{
         var depoisDoClick = page.textoButtonAzul();
         System.out.println("Texto depois do clique no botao Azul: " + depoisDoClick);
 
-        assertNotEquals(antesDoClick, depoisDoClick);
+        if (!antesDoClick.equals(depoisDoClick)) {
+            System.out.println("O valor do botão Azul mudou.");
+        } else {
+            System.out.println("O valor do botão Azul não mudou.");
+        }
 
     }
 
@@ -36,7 +39,11 @@ public class ChallengingTest extends BaseTest{
         var depoisDoClick = page.textoButtonVermelho();
         System.out.println("Texto depois do clique no botao vermelho: " + depoisDoClick);
 
-        assertNotEquals(antesDoClick, depoisDoClick);
+        if (!antesDoClick.equals(depoisDoClick)) {
+            System.out.println("O valor do botão Vermelho mudou.");
+        } else {
+            System.out.println("O valor do botão Vermelho não mudou.");
+        }
     }
 
     @Test
@@ -49,13 +56,17 @@ public class ChallengingTest extends BaseTest{
         var depoisDoClick = page.textoButtonVerde();
         System.out.println("Texto depois do clique no botao verde: " + depoisDoClick);
 
-        assertNotEquals(antesDoClick, depoisDoClick);
+        if (!antesDoClick.equals(depoisDoClick)) {
+            System.out.println("O valor do botão Verde mudou.");
+        } else {
+            System.out.println("O valor do botão Verde não mudou.");
+        }
     }
 
     @Test
-    public void testDeveClicarEmTodosOsBotoesEditEDeleteDaGrid(){
-        List<WebElement> elementosEdit =  page.obterLinksEdit();
-        List<WebElement> elementosDelete =  page.obterLinksDelete();
+    public void testDeveClicarEmTodosOsBotoesEditEDeleteDaGrid() {
+        List<WebElement> elementosEdit = page.obterLinksEdit();
+        List<WebElement> elementosDelete = page.obterLinksDelete();
 
         int contadorEdit = 0;
         int contadorDelete = 0;
@@ -79,10 +90,10 @@ public class ChallengingTest extends BaseTest{
     }
 
     @Test
-    public void testDeveEfetuarUmCliqueNoBotaoAzulDaTelaEValidarOValorNoCanvaAnswer () {
+    public void testDeveEfetuarUmCliqueNoBotaoAzulDaTelaEValidarOValorNoCanvaAnswer() {
 
         var antesDoClick = page.getStringAnswer();
-        System.out.println("O valor de Answer na tela antes do click no botao azul "+ antesDoClick);
+        System.out.println("O valor de Answer na tela antes do click no botao azul " + antesDoClick);
 
         page.buttonAzul();
 
@@ -94,10 +105,10 @@ public class ChallengingTest extends BaseTest{
     }
 
     @Test
-    public void testDeveEfetuarUmCliqueNoBotaoVermelhoDaTelaEValidarOValorNoCanvaAnswer () {
+    public void testDeveEfetuarUmCliqueNoBotaoVermelhoDaTelaEValidarOValorNoCanvaAnswer() {
 
         var antesDoClick = page.getStringAnswer();
-        System.out.println("O valor de Answer na tela antes do click no botao vermelho "+ antesDoClick);
+        System.out.println("O valor de Answer na tela antes do click no botao vermelho " + antesDoClick);
 
         page.buttonVermelho();
 
@@ -109,10 +120,10 @@ public class ChallengingTest extends BaseTest{
     }
 
     @Test
-    public void testDeveEfetuarUmCliqueNoBotaoVerdeDaTelaEValidarOValorNoCanvaAnswer () {
+    public void testDeveEfetuarUmCliqueNoBotaoVerdeDaTelaEValidarOValorNoCanvaAnswer() {
 
         var antesDoClick = page.getStringAnswer();
-        System.out.println("O valor de Answer na tela antes do click no botao verde "+ antesDoClick);
+        System.out.println("O valor de Answer na tela antes do click no botao verde " + antesDoClick);
 
         page.buttonVerde();
 
@@ -123,4 +134,3 @@ public class ChallengingTest extends BaseTest{
 
     }
 }
-

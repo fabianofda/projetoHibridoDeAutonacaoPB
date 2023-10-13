@@ -20,6 +20,9 @@ Para instalar as dependências do projeto, execute o seguinte comando:
 > mvn clean install
 
 ## Executando Testes
+Para executar todos os testes do projeto, use o seguinte comando:
+>mvn test -Dtest=RunnerTests
+
 
 ### Testes Web
 

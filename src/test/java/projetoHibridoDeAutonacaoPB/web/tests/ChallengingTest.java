@@ -3,9 +3,14 @@ package projetoHibridoDeAutonacaoPB.web.tests;
 
 import org.junit.Test;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import projetoHibridoDeAutonacaoPB.web.pages.ChallengingPage;
+
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +18,7 @@ public class ChallengingTest extends BaseTest{
     ChallengingPage page = new ChallengingPage(driver);
 
     @Test
-    public void testDeveEfetuarUmCliqueNoBotaoAzulDaTela() {
+    public void testDeveEfetuarUmCliqueNoBotaoAzulDaTelaEValidarALabelDoBotao() {
 
         var antesDoClick = page.textoButtonAzul();
         System.out.println("Texto antes do clique no botao Azul: " + antesDoClick);
@@ -28,7 +33,7 @@ public class ChallengingTest extends BaseTest{
     }
 
     @Test
-    public void testDeveEfetuarUmCliqueNoBotaoVermelhoDaTela() {
+    public void testDeveEfetuarUmCliqueNoBotaoVermelhoDaTelaEValidarALabelDoBotao() {
 
         var antesDoClick = page.textoButtonVermelho();
         System.out.println("Texto antes do clique no botao vermelho: " + antesDoClick);
@@ -42,7 +47,7 @@ public class ChallengingTest extends BaseTest{
     }
 
     @Test
-    public void testDeveEfetuarUmCliqueNoBotaoVerdeDaTela() {
+    public void testDeveEfetuarUmCliqueNoBotaoVerdeDaTelaEValidarALabelDoBotao() {
         var antesDoClick = page.textoButtonVerde();
         System.out.println("Texto antes do clique no botao verde: " + antesDoClick);
 
@@ -79,4 +84,50 @@ public class ChallengingTest extends BaseTest{
         assertEquals(10, elementosDelete.size());
 
     }
+
+    @Test
+    public void testDeveEfetuarUmCliqueNoBotaoAzulDaTelaEValidarOValorNoCanvaAnswer () {
+
+        var antesDoClick = page.getStringAnswer();
+        System.out.println("O valor de Answer na tela antes do click no botao azul "+ antesDoClick);
+
+        page.buttonAzul();
+
+        var depoisDoClick = page.getStringAnswer();
+        System.out.println("O valor de Answer na tela depois o click no botao azul " + depoisDoClick);
+
+        assertNotEquals(antesDoClick, depoisDoClick);
+
+    }
+
+    @Test
+    public void testDeveEfetuarUmCliqueNoBotaoVermelhoDaTelaEValidarOValorNoCanvaAnswer () {
+
+        var antesDoClick = page.getStringAnswer();
+        System.out.println("O valor de Answer na tela antes do click no botao vermelho "+ antesDoClick);
+
+        page.buttonVermelho();
+
+        var depoisDoClick = page.getStringAnswer();
+        System.out.println("O valor de Answer na tela depois o click no botao vermelho " + depoisDoClick);
+
+        assertNotEquals(antesDoClick, depoisDoClick);
+
+    }
+
+    @Test
+    public void testDeveEfetuarUmCliqueNoBotaoVerdeDaTelaEValidarOValorNoCanvaAnswer () {
+
+        var antesDoClick = page.getStringAnswer();
+        System.out.println("O valor de Answer na tela antes do click no botao verde "+ antesDoClick);
+
+        page.buttonVerde();
+
+        var depoisDoClick = page.getStringAnswer();
+        System.out.println("O valor de Answer na tela depois o click no botao verde " + depoisDoClick);
+
+        assertNotEquals(antesDoClick, depoisDoClick);
+
+    }
 }
+

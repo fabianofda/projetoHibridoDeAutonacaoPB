@@ -21,7 +21,7 @@ Para instalar as dependências do projeto, execute o seguinte comando:
 
 ## Executando Testes
 Para executar todos os testes do projeto, use o seguinte comando:
->mvn test -Dtest=RunnerTests
+>mvn test -Dtest=RunnerTests surefire-report:report
 
 Para executar os testes web, use o seguinte comando:
 >mvn test -Dtest=projetoHibridoDeAutonacaoPB.web.tests.ChallengingTest
